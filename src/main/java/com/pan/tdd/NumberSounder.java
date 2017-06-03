@@ -18,18 +18,18 @@ public class NumberSounder {
 	public String getNumber(Integer inputNum) {
 
 		if (isContainsFirstSpecNum(inputNum, specialNum.getFirstNum())){
-			return SpecNumType.FIRST.value;
+			return SpecialNumType.FIRST.value;
 		}
 
 		StringBuilder result=new StringBuilder();
 		if (isMultiple(inputNum, specialNum.getFirstNum())){
-			result.append(SpecNumType.FIRST.value);
+			result.append(SpecialNumType.FIRST.value);
 		}
 		if (isMultiple(inputNum, specialNum.getSecondNum())){
-			result.append(SpecNumType.SECOND.value);
+			result.append(SpecialNumType.SECOND.value);
 		}
 		if (isMultiple(inputNum, specialNum.getThirdNum())){
-			result.append(SpecNumType.THIRD.value);
+			result.append(SpecialNumType.THIRD.value);
 		}
 
 		if (StringUtils.isNotBlank(result.toString()) ){

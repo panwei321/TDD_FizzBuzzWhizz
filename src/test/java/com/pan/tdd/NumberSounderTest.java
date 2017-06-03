@@ -40,7 +40,7 @@ public class NumberSounderTest {
 	}
 
 	@Test
-	public void should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specNum() {
+	public void should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum() {
 		// given
 		Integer inputNum = 105;
 		// when
@@ -52,7 +52,7 @@ public class NumberSounderTest {
 
 
 	@Test
-	public void should_return_FizzBuzz_when_input_is_multiple_of_firstSpecNum_and_secondSpecNum() {
+	public void should_return_FizzBuzz_when_input_is_multiple_of_firstSpecialNum_and_secondSpecialNum() {
 		// given
 		Integer inputNum = 15;
 

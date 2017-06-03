@@ -49,7 +49,7 @@
     * 意图
         * 进一步添加需求。
     * 测试名称
-        * should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specNum
+        * should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum
     * 类名及行为名
         * NumberSounder，getNumber
         * SpecialNums
@@ -61,7 +61,7 @@
     * 意图
         * 驱动实现。
     * 测试名称
-        * should_return_FizzBuzz_when_input_is_multiple_of_firstSpecNum_and_secondSpecNum
+        * should_return_FizzBuzz_when_input_is_multiple_of_firstSpecialNum_and_secondSpecialNum
     * 类名及行为名
         * NumberSounder，getNumber
         * SpecialNums

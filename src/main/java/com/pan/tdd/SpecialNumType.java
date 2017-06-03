@@ -5,7 +5,7 @@ package com.pan.tdd;
  * @Author :AlbertPan
  * @Date : 17/6/3
  */
-public enum SpecNumType {
+public enum SpecialNumType {
 
 	FIRST("Fizz"),
 	SECOND("Buzz"),
@@ -14,7 +14,7 @@ public enum SpecNumType {
 	String value;
 
 
-	SpecNumType(String value) {
+	SpecialNumType(String value) {
 		this.value = value;
 	}
 
