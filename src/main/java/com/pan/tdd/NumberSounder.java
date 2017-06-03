@@ -21,26 +21,27 @@ public class NumberSounder {
 			return SpecNumType.FIRST.value;
 		}
 
-		if (inputNum%specialNums.getFirstNum()==0&&inputNum%specialNums.getSecondNum()==0&&inputNum%specialNums.getThirdNum()==0){
-            return  SpecNumType.FIRST.value+SpecNumType.SECOND.value+SpecNumType.THIRD.value;
-		}
-
 		StringBuilder result=new StringBuilder();
-		if (inputNum%specialNums.getFirstNum()==0){
+		if (isMultiple(inputNum,specialNums.getFirstNum())){
 			result.append(SpecNumType.FIRST.value);
 		}
-		if (inputNum%specialNums.getSecondNum()==0){
+		if (isMultiple(inputNum,specialNums.getSecondNum())){
 			result.append(SpecNumType.SECOND.value);
 		}
-		if (inputNum%specialNums.getThirdNum()==0){
+		if (isMultiple(inputNum,specialNums.getThirdNum())){
 			result.append(SpecNumType.THIRD.value);
 		}
+
 		if (StringUtils.isNotBlank(result.toString()) ){
 			return  result.toString();
 		}
 
 
 		return inputNum.toString();
+	}
+
+	private boolean isMultiple(Integer inputNum,Integer specNum) {
+		return inputNum%specNum==0;
 	}
 
 	private boolean isContainsFirstSpecNum(Integer inputNum, Integer firstSpecNum) {
