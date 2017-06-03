@@ -3,9 +3,9 @@
 1. git init
 2. mvn idea:idea
 3. Add as maven project。
-4. 看一下pom.xml。
+4. pom.xml。
 5. 测试项目是否配置正确。
-6. 第一次提交。
+6. first git push。
 7. 需求分析。
 
 8. 任务分解。
