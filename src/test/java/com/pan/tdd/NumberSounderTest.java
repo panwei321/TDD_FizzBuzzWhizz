@@ -51,4 +51,17 @@ public class NumberSounderTest {
 		// then
 		assertThat(outputNum, is("FizzBuzzWhizz"));
 	}
+
+
+	@Test
+	public void should_return_FizzBuzz_when_input_is_multiple_of_firstSpecNum_and_secondSpecNum() {
+		// given
+		Integer inputNum = 15;
+
+		// when
+		String outputNum = numberSounder.getNumber(inputNum);
+
+		// then
+		assertThat(outputNum, is("FizzBuzz"));
+	}
 }

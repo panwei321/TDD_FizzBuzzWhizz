@@ -27,7 +27,9 @@
 12. 测试样本的选择(实例化需求)
     * 简单。
     * 针对业务进行测试，而不是针对方法进行测试。
-    
+
+** 选择第一个任务 **
+
 13. 选择先从需求8.3.3（包含第一个特殊数）的测试样本。
     * 需求
         * 输入含3的数字，返回Fizz。
@@ -53,103 +55,17 @@
         * SpecialNums
 16. 同样使用伪实现，因为还未突破重构的底线，现有的代码没有阻碍我们添加新需求。
 
-17. 选择2A2B测试样本，三角测试法
+17. 选择需求8.3.2（一个数同时是任意2个特殊数的倍数）的测试样本
     * 需求
-        * 用户输入4个正确的数字，但是其中两个位置错误，返回2A2B。
+        * 输入一个数字，是前连个特殊数的倍数，返回FizzBuzz。
     * 意图
         * 驱动实现。
     * 测试名称
-        * should_return_2A2B_when_has_correct_number_but_wrong_position
+        * should_return_FizzBuzz_when_input_is_multiple_of_firstSpecNum_and_secondSpecNum
     * 类名及行为名
-        * Game，guess
-        * Answer
+        * NumberSounder，getNumber
+        * SpecialNums
 18. 测试出现重复代码。
 19. guess()方法里面的职责有点问题，使用的属性基本上都是Answer内的，识别出了代码坏味道"Feature Evny"——依赖情结。
 20. 重构手法-提取函数，移动函数。  
-21. 第二个任务，随机生成答案。
-22. 生成4位数的答案
-    * 需求
-        * 生成四位数的答案。
-    * 意图
-        * 第二核心的需求。
-    * 测试名称
-        * should_generator_answer
-    * 类名及行为名
-        * AnswerGenerator, generator
-23. 重构，将GameTest里面的答案改成由AnswerGenerator生成。
-24. 第三个任务，输入验证。
-    
-    * 重复验证
-    * 长度验证
-    * 数字验证
-    
-25. 重复验证
-    * 需求
-       * 重复验证。
-    * 意图
-       * 重复验证较为简单。
-    * 测试名称
-       * should_raise_error_when_answer_number_duplicated
-    * 类名及行为名
-       * AnswerValidator, validator
-26. 长度验证
-    * 需求
-       * 长度验证。
-    * 意图
-       * 三角实现法则。
-    * 测试名称
-       * should_raise_error_when_answer_length_not_four
-    * 类名及行为名
-       * AnswerValidator, validator  
-27. 数字验证
-    * 需求
-       * 数字验证。
-    * 意图
-       * 三角实现法则。
-    * 测试名称
-       * should_raise_error_when_answer_not_digit
-    * 类名及行为名
-       * AnswerValidator, validator   
-28. 重构AnswerValidator，简化算法。抽方法，使用正则表达式。 
-29. 将AnswerValidator加回到Game的guess()方法。
-
-30. 记录猜测结果失败
-    * 需求
-       * AS  When 输入猜测结果  Then 记录结果。
-    * 意图
-       * 
-    * 测试名称
-       * should_raise_error_when_save_fail
-    * 类名及行为名
-       * AnswerOperate, save
- 
-31. 记录猜测结果成功 
-    * 需求
-       * AS  When 输入猜测结果  Then 记录结果。
-    * 意图
-       * 
-    * 测试名称
-       * should_return_void_when_save_success
-    * 类名及行为名
-       * AnswerOperate, save   
         
-     
-32. 选择全部猜测不对返回失败的样本 
-    * 需求
-       * AS game  When 6次猜测全部失败  Then 返回失败。
-    * 意图
-       * 
-    * 测试名称
-       * should_return_OVER_when_6_times_fail
-    * 类名及行为名
-       * Game, display      
-               
-32. 选择2次猜中返回成功的样本 
-    * 需求
-       * AS game  When 2次猜中  Then 返回成功。
-    * 意图
-       * 
-    * 测试名称
-       * should_return_SUCCESS_when_2_times_got
-    * 类名及行为名
-       * Game, display                

@@ -1,5 +1,7 @@
 package com.pan.tdd;
 
+import org.apache.commons.lang.StringUtils;
+
 /**
  * @Description :
  * @Author :AlbertPan
@@ -22,6 +24,21 @@ public class NumberSounder {
 		if (inputNum%specialNums.getFirstNum()==0&&inputNum%specialNums.getSecondNum()==0&&inputNum%specialNums.getThirdNum()==0){
             return  SpecNumType.FIRST.value+SpecNumType.SECOND.value+SpecNumType.THIRD.value;
 		}
+
+		StringBuilder result=new StringBuilder();
+		if (inputNum%specialNums.getFirstNum()==0){
+			result.append(SpecNumType.FIRST.value);
+		}
+		if (inputNum%specialNums.getSecondNum()==0){
+			result.append(SpecNumType.SECOND.value);
+		}
+		if (inputNum%specialNums.getThirdNum()==0){
+			result.append(SpecNumType.THIRD.value);
+		}
+		if (StringUtils.isNotBlank(result.toString()) ){
+			return  result.toString();
+		}
+
 
 		return inputNum.toString();
 	}
