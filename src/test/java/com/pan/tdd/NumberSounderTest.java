@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.swing.*;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -15,13 +13,13 @@ import static org.junit.Assert.*;
  * @Date : 17/6/3
  */
 public class NumberSounderTest {
-	private SpecialNums specialNums;
+	private SpecialNum specialNum;
 	private NumberSounder numberSounder;
 
 	@Before
 	public void setUp() throws Exception {
-		specialNums = new SpecialNums(3, 5, 7);
-		numberSounder = new NumberSounder(specialNums);
+		specialNum = new SpecialNum(3, 5, 7);
+		numberSounder = new NumberSounder(specialNum);
 	}
 
 	@After

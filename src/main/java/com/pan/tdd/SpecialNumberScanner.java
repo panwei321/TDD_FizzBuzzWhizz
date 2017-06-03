@@ -1,7 +1,7 @@
 package com.pan.tdd;
 
 /**
- * @Description :
+ * @Description : 特殊数输入工具类
  * @Author :AlbertPan
  * @Date : 17/6/3
  */

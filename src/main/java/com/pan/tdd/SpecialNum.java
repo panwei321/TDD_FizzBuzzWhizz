@@ -1,17 +1,17 @@
 package com.pan.tdd;
 
 /**
- * @Description :
+ * @Description : 特殊数类
  * @Author :AlbertPan
  * @Date : 17/6/3
  */
-public class SpecialNums {
+public class SpecialNum {
 
 	private Integer firstNum;
 	private Integer secondNum;
 	private Integer thirdNum;
 
-	public SpecialNums(Integer firstNum, Integer secondNum, Integer thirdNum) {
+	public SpecialNum(Integer firstNum, Integer secondNum, Integer thirdNum) {
 		this.firstNum = firstNum;
 		this.secondNum = secondNum;
 		this.thirdNum = thirdNum;

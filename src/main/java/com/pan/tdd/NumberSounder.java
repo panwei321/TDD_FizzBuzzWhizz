@@ -3,32 +3,32 @@ package com.pan.tdd;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @Description :
+ * @Description :报数处理类
  * @Author :AlbertPan
  * @Date : 17/6/3
  */
 public class NumberSounder {
 
-	private  SpecialNums specialNums;
+	private SpecialNum specialNum;
 
-	public NumberSounder(SpecialNums specialNums) {
-		this.specialNums = specialNums;
+	public NumberSounder(SpecialNum specialNum) {
+		this.specialNum = specialNum;
 	}
 
 	public String getNumber(Integer inputNum) {
 
-		if (isContainsFirstSpecNum(inputNum, specialNums.getFirstNum())){
+		if (isContainsFirstSpecNum(inputNum, specialNum.getFirstNum())){
 			return SpecNumType.FIRST.value;
 		}
 
 		StringBuilder result=new StringBuilder();
-		if (isMultiple(inputNum,specialNums.getFirstNum())){
+		if (isMultiple(inputNum, specialNum.getFirstNum())){
 			result.append(SpecNumType.FIRST.value);
 		}
-		if (isMultiple(inputNum,specialNums.getSecondNum())){
+		if (isMultiple(inputNum, specialNum.getSecondNum())){
 			result.append(SpecNumType.SECOND.value);
 		}
-		if (isMultiple(inputNum,specialNums.getThirdNum())){
+		if (isMultiple(inputNum, specialNum.getThirdNum())){
 			result.append(SpecNumType.THIRD.value);
 		}
 
