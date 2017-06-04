@@ -3,7 +3,7 @@ package com.pan.tdd;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @Description :
+ * @Description :学生类
  * @Author :AlbertPan
  * @Date : 17/6/4
  */
@@ -19,17 +19,7 @@ public class Student {
 
 		StringBuilder rightSound = new StringBuilder();
 
-		if (originalNum % specialNum.getFirstNum() == 0) {
-			rightSound.append(SpecialNumType.getValue(SpecialNumType.FIRST.getKey()));
-		}
-
-		if (originalNum % specialNum.getSecondNum() == 0) {
-			rightSound.append(SpecialNumType.getValue(SpecialNumType.SECOND.getKey()));
-		}
-
-		if (originalNum % specialNum.getThirdNum() == 0) {
-			rightSound.append(SpecialNumType.getValue(SpecialNumType.THIRD.getKey()));
-		}
+		getRightSoundWhenisMultipleOfSpecialNum(originalNum, rightSound);
 
 
 		if (StringUtils.isNotBlank(rightSound.toString())) {
@@ -37,5 +27,39 @@ public class Student {
 		}
 
 		return String.valueOf(originalNum);
+	}
+
+
+	private void getRightSoundWhenisMultipleOfSpecialNum(Integer originalNum, StringBuilder rightSound) {
+		getRightSoundWhenisMultipleOfFirstSpecialNum(originalNum, rightSound);
+		getRightSoundWhenisMultipleOfSecondSpecialNum(originalNum, rightSound);
+		getRightSoundWhenisMultipleOfThirdSpecialNum(originalNum, rightSound);
+	}
+
+
+	private void getRightSoundWhenisMultipleOfThirdSpecialNum(Integer originalNum, StringBuilder rightSound) {
+		if (isMultiple(originalNum, specialNum.getThirdNum())) {
+			rightSound.append(SpecialNumType.THIRD.getValue());
+		}
+	}
+
+	private void getRightSoundWhenisMultipleOfSecondSpecialNum(Integer originalNum, StringBuilder rightSound) {
+		if (isMultiple(originalNum, specialNum.getSecondNum())) {
+			rightSound.append(SpecialNumType.SECOND.getValue());
+		}
+	}
+
+	private void getRightSoundWhenisMultipleOfFirstSpecialNum(Integer originalNum, StringBuilder rightSound) {
+		if (isMultiple(originalNum, specialNum.getFirstNum())) {
+			rightSound.append(SpecialNumType.FIRST.getValue());
+		}
+	}
+
+	private boolean isMultiple(Integer originalNum, Integer specNum) {
+		return originalNum % specNum == 0;
+	}
+
+	private boolean isContainsFirstSpecNum(Integer originalNum, Integer firstSpecNum) {
+		return String.valueOf(originalNum).contains(firstSpecNum.toString());
 	}
 }

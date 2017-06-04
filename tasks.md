@@ -19,8 +19,8 @@
  
  **多想一下**
  <p>
-  1. 包含第一个特殊数字，直接读出对应的文字<br>
-  2. 若是特殊数字的倍数，则要读出几个特殊的数字对应的文字合集<br>
+  1. 若是特殊数字的倍数，则要读出几个特殊的数字对应的文字合集<br>
+  2. 包含第一个特殊数字，直接读出对应的文字<br>
   3. 若不满足1和2，就直接读出数字
  </p>
     
@@ -38,9 +38,9 @@
 
 13. 选择需求8.3.1（当前报数是特殊数的倍数）的测试样本
     * 需求
-        * 输入一个数字，是第2个特殊数的倍数，返回Buzz。
+        * 输入一个数字，是第二个特殊数的倍数，返回Buzz。
     * 意图
-        * 进一步添加需求。
+        * 最优先的功能，具有公用性和被依赖性，简单实现，。
     * 测试名称
         * should_return_Buzz_when_input_is_multiple_of_secondSpecialNum
     * 类名及行为名
@@ -69,14 +69,14 @@
     * 测试名称
         * should_return_FizzBuzz_when_input_is_multiple_of_firstSpecialNum_and_secondSpecialNum
     * 类名及行为名
-        * NumberSounder，getNumber
-        * SpecialNums
+        * Student，numberOff
+        * SpecialNumber
       
 13. 选择先从需求8.3.3（包含第一个特殊数）的测试样本。
     * 需求
         * 输入含3的数字，返回Fizz。
     * 意图
-        * 最优先的功能，简单实现。
+        * 特殊需求。
     * 测试名称
         * should_return_Fizz_when_input_contain_first_special_num
         * Student Should Sound Off Fizz When The Number Contain First Special Num
