@@ -65,4 +65,16 @@ public class StudentTest {
 		// then
 		assertThat(rightNum, is("FizzBuzz"));
 	}
+
+	@Test
+	public void should_return_Fizz_when_input_contain_first_special_num() {
+		// given
+		Integer originalNum = Integer.parseInt("5"+specialNum.getFirstNum())   ;
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("Fizz"));
+	}
 }

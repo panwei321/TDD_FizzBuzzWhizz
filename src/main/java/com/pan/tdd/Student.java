@@ -8,6 +8,7 @@ import org.apache.commons.lang.StringUtils;
  * @Date : 17/6/4
  */
 public class Student {
+
 	private SpecialNum specialNum;
 
 	public Student(SpecialNum specialNum) {
@@ -16,47 +17,69 @@ public class Student {
 
 
 	public String numberOff(Integer originalNum) {
+		String rightSound= getRightSound(originalNum);
+		System.out.println(rightSound);
+		return  rightSound;
+	}
 
-		StringBuilder rightSound = new StringBuilder();
-
-		getRightSoundWhenisMultipleOfSpecialNum(originalNum, rightSound);
-
-
-		if (StringUtils.isNotBlank(rightSound.toString())) {
-			return rightSound.toString();
+	private String getRightSound(Integer originalNum) {
+		String rightSound;
+		rightSound = getRightSoundWhenContainsFirstSpecialNum(originalNum);
+		if (StringUtils.isNotBlank(rightSound)) {
+			return rightSound;
 		}
 
+		rightSound = getRightSoundWhenIsMultipleOfSpecialNum(originalNum);
+
+		if (StringUtils.isNotBlank(rightSound)) {
+			return rightSound;
+		}
 		return String.valueOf(originalNum);
 	}
 
 
-	private void getRightSoundWhenisMultipleOfSpecialNum(Integer originalNum, StringBuilder rightSound) {
-		getRightSoundWhenisMultipleOfFirstSpecialNum(originalNum, rightSound);
-		getRightSoundWhenisMultipleOfSecondSpecialNum(originalNum, rightSound);
-		getRightSoundWhenisMultipleOfThirdSpecialNum(originalNum, rightSound);
+	private String getRightSoundWhenIsMultipleOfSpecialNum(Integer originalNum) {
+		StringBuilder rightSound = new StringBuilder();
+		rightSound.append(getRightSoundWhenIsMultipleOfFirstSpecialNum(originalNum));
+		rightSound.append(getRightSoundWhenIsMultipleOfSecondSpecialNum(originalNum));
+		rightSound.append(getRightSoundWhenIsMultipleOfThirdSpecialNum(originalNum));
+		return rightSound.toString();
 	}
 
-
-	private void getRightSoundWhenisMultipleOfThirdSpecialNum(Integer originalNum, StringBuilder rightSound) {
-		if (isMultiple(originalNum, specialNum.getThirdNum())) {
-			rightSound.append(SpecialNumType.THIRD.getValue());
-		}
-	}
-
-	private void getRightSoundWhenisMultipleOfSecondSpecialNum(Integer originalNum, StringBuilder rightSound) {
-		if (isMultiple(originalNum, specialNum.getSecondNum())) {
-			rightSound.append(SpecialNumType.SECOND.getValue());
-		}
-	}
-
-	private void getRightSoundWhenisMultipleOfFirstSpecialNum(Integer originalNum, StringBuilder rightSound) {
+	private String getRightSoundWhenIsMultipleOfFirstSpecialNum(Integer originalNum) {
 		if (isMultiple(originalNum, specialNum.getFirstNum())) {
-			rightSound.append(SpecialNumType.FIRST.getValue());
+			return SpecialNumType.FIRST.getValue();
 		}
+		return "";
 	}
+
+	private String getRightSoundWhenIsMultipleOfSecondSpecialNum(Integer originalNum) {
+		if (isMultiple(originalNum, specialNum.getSecondNum())) {
+			return  SpecialNumType.SECOND.getValue();
+		}
+		return "";
+	}
+
+	private String getRightSoundWhenIsMultipleOfThirdSpecialNum(Integer originalNum) {
+		if (isMultiple(originalNum, specialNum.getThirdNum())) {
+			return SpecialNumType.THIRD.getValue();
+		}
+		return "";
+	}
+
+
+
+
 
 	private boolean isMultiple(Integer originalNum, Integer specNum) {
 		return originalNum % specNum == 0;
+	}
+
+	private String getRightSoundWhenContainsFirstSpecialNum(Integer originalNum) {
+		if (isContainsFirstSpecNum(originalNum, specialNum.getFirstNum())) {
+			return SpecialNumType.FIRST.getValue();
+		}
+		return "";
 	}
 
 	private boolean isContainsFirstSpecNum(Integer originalNum, Integer firstSpecNum) {
