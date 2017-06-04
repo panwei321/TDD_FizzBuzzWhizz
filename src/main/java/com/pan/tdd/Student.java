@@ -79,7 +79,7 @@ public class Student {
 		if (isContainsFirstSpecNum(originalNum, specialNum.getFirstNum())) {
 			return SpecialNumType.FIRST.getValue();
 		}
-		return "";
+		return null;
 	}
 
 	private boolean isContainsFirstSpecNum(Integer originalNum, Integer firstSpecNum) {
