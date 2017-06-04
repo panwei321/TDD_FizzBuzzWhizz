@@ -17,6 +17,12 @@
    - 8.3.3  如果所报数字包含了第一个特殊数，那么也不能说该数字，而是要说相应的单词，比如本例中第一个特殊数是3，那么要报13的同学应该说Fizz。如果数字中包含了第一个特殊数，那么忽略规则3和规则4，比如要报35的同学只报Fizz，不报BuzzWhizz。
  - 8.4 根据条件输出对应的结果。
  
+ **多想一下**
+ <p>
+  1. 包含第一个特殊数字，直接读出对应的文字<br>
+  2. 若是特殊数字的倍数，则要读出几个特殊的数字对应的文字合集<br>
+  3. 若不满足1和2，就直接读出数字
+ </p>
     
 9. 选择任务。
     * 依赖性。
@@ -28,20 +34,19 @@
     * 简单。
     * 针对业务进行测试，而不是针对方法进行测试。
 
-** 选择第一个任务 **
+** 选择第一个任务:学生判断当前报数是否是特殊数的倍数 **
 
-13. 选择先从需求8.3.3（包含第一个特殊数）的测试样本。
+13. 选择需求8.3.1（当前报数是特殊数的倍数）的测试样本
     * 需求
-        * 输入含3的数字，返回Fizz。
+        * 输入一个数字，是第2个特殊数的倍数，返回Buzz。
     * 意图
-        * 最优先的功能，简单实现。
+        * 进一步添加需求。
     * 测试名称
-        * should_return_Fizz_when_input_contain_first_special_num
-        * Student Should Sound Off Fizz When The Number Contain First Special Num
+        * should_return_Buzz_when_input_is_multiple_of_secondSpecialNum
     * 类名及行为名
-        * NumberSounder，getNumber
-        * SpecialNums
-14. 使用伪实现通过第一个测试。
+        * Student，numberOff 
+        * SpecialNumber
+14. 同样使用伪实现，因为还未突破重构的底线，现有的代码没有阻碍我们添加新需求。
 
 15. 选择需求8.3.2（一个数同时是三个特殊数的倍数）的测试样本
     * 需求
@@ -51,9 +56,10 @@
     * 测试名称
         * should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum
     * 类名及行为名
-        * NumberSounder，getNumber
-        * SpecialNums
+        * Student，numberOff
+        * SpecialNumber
 16. 同样使用伪实现，因为还未突破重构的底线，现有的代码没有阻碍我们添加新需求。
+
 
 17. 选择需求8.3.2（一个数同时是任意2个特殊数的倍数）的测试样本
     * 需求
@@ -65,5 +71,19 @@
     * 类名及行为名
         * NumberSounder，getNumber
         * SpecialNums
+      
+13. 选择先从需求8.3.3（包含第一个特殊数）的测试样本。
+    * 需求
+        * 输入含3的数字，返回Fizz。
+    * 意图
+        * 最优先的功能，简单实现。
+    * 测试名称
+        * should_return_Fizz_when_input_contain_first_special_num
+        * Student Should Sound Off Fizz When The Number Contain First Special Num
+    * 类名及行为名
+        * NumberSounder，getNumber
+        * SpecialNums
+14. 使用伪实现通过第一个测试。        
+        
 18. 出现重复代码，处理特殊数倍数判定处理优化，并重构部分坏味道代码，然后从新跑用例，验证优化准确性。 
         
