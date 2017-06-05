@@ -15,6 +15,7 @@
    - 8.3.1  如果所报数字是第一个特殊数（3）的倍数，那么不能说该数字，而要说Fizz；如果所报数字是第二个特殊数（5）的倍数，那么要说Buzz；如果所报数字是第三个特殊数（7）的倍数，那么要说Whizz。
    - 8.3.2  如果所报数字同时是两个特殊数的倍数情况下，也要特殊处理，比如第一个特殊数和第二个特殊数的倍数，那么不能说该数字，而是要说FizzBuzz, 以此类推。如果同时是三个特殊数的倍数，那么要说FizzBuzzWhizz。
    - 8.3.3  如果所报数字包含了第一个特殊数，那么也不能说该数字，而是要说相应的单词，比如本例中第一个特殊数是3，那么要报13的同学应该说Fizz。如果数字中包含了第一个特殊数，那么忽略规则3和规则4，比如要报35的同学只报Fizz，不报BuzzWhizz。
+   - 8.3.4  不符合以上所有条件则报出该数字
  - 8.4 根据条件输出对应的结果。
  
  **多想一下**
@@ -104,6 +105,18 @@
     * 测试名称
         * should_return_Fizz_when_input_contain_first_special_num
         * Student Should Sound Off Fizz When The Number Contain First Special Num
+    * 类名及行为名
+        * NumberSounder，getNumber
+        * SpecialNums    
+        
+19. 选择先从需求8.3.4（不符合任意条件直接报出该数字）的测试样本。
+    * 需求
+        * 输入含4的数字，返回4。
+    * 意图
+        * 普通规则。
+    * 测试名称
+        * should_return_4_when_input_4
+        
     * 类名及行为名
         * NumberSounder，getNumber
         * SpecialNums    

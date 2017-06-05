@@ -127,4 +127,16 @@ public class StudentTest {
 		// then
 		assertThat(rightNum, is("Fizz"));
 	}
+
+	@Test
+	public void should_return_4_when_input_4() {
+		// given
+		Integer originalNum = 4  ;
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("4"));
+	}
 }
