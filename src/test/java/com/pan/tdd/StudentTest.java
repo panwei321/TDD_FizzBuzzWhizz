@@ -29,6 +29,19 @@ public class StudentTest {
 	}
 
 	@Test
+	public void should_return_Fizz_when_input_is_multiple_of_firstSpecialNum() {
+		// given
+		Integer originalNum = specialNum.getFirstNum() * 2;
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("Fizz"));
+
+	}
+
+	@Test
 	public void should_return_Buzz_when_input_is_multiple_of_secondSpecialNum() {
 		// given
 		Integer originalNum = specialNum.getSecondNum() * 2;
@@ -42,15 +55,15 @@ public class StudentTest {
 	}
 
 	@Test
-	public void should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum() {
+	public void should_return_Whizz_when_input_is_multiple_of_thirdSpecialNum() {
 		// given
-		Integer originalNum = specialNum.getFirstNum() * specialNum.getSecondNum() * specialNum.getThirdNum();
+		Integer originalNum = specialNum.getThirdNum() * 2;
 
 		// when
 		String rightNum = student.numberOff(originalNum);
 
 		// then
-		assertThat(rightNum, is("FizzBuzzWhizz"));
+		assertThat(rightNum, is("Whizz"));
 
 	}
 
@@ -64,6 +77,43 @@ public class StudentTest {
 
 		// then
 		assertThat(rightNum, is("FizzBuzz"));
+	}
+
+	@Test
+	public void should_return_FizzWhizz_when_input_is_multiple_of_firstSpecialNum_and_thirdSpecialNum() {
+		// given
+		Integer originalNum = specialNum.getFirstNum() * specialNum.getThirdNum() ;
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("FizzWhizz"));
+	}
+
+	@Test
+	public void should_return_BuzzWhizz_when_input_is_multiple_of_secondSpecialNum_and_thirdSpecialNum() {
+		// given
+		Integer originalNum = specialNum.getSecondNum() * specialNum.getThirdNum()*2 ;
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("BuzzWhizz"));
+	}
+
+	@Test
+	public void should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum() {
+		// given
+		Integer originalNum = specialNum.getFirstNum() * specialNum.getSecondNum() * specialNum.getThirdNum();
+
+		// when
+		String rightNum = student.numberOff(originalNum);
+
+		// then
+		assertThat(rightNum, is("FizzBuzzWhizz"));
+
 	}
 
 	@Test

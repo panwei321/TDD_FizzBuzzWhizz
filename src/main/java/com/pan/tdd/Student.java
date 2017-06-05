@@ -17,50 +17,50 @@ public class Student {
 
 
 	public String numberOff(Integer originalNum) {
-		String rightSound= getRightSound(originalNum);
+		String rightSound = getRightSound(originalNum);
 		System.out.println(rightSound);
-		return  rightSound;
+		return rightSound;
 	}
 
 	private String getRightSound(Integer originalNum) {
-		String rightSound;
-		rightSound = getRightSoundWhenContainsFirstSpecialNum(originalNum);
-		if (StringUtils.isNotBlank(rightSound)) {
-			return rightSound;
-		}
+		String codeName;
 
-		rightSound = getRightSoundWhenIsMultipleOfSpecialNum(originalNum);
+		codeName = getCodeNameWhenIsMultipleOfSpecialNum(originalNum);
 
-		if (StringUtils.isNotBlank(rightSound)) {
-			return rightSound;
+		if (isContainsFirstSpecNum(originalNum, specialNum.getFirstNum())) {
+			codeName = SpecialNumType.FIRST.getValue();
 		}
-		return String.valueOf(originalNum);
+		
+		if (StringUtils.isBlank(codeName)) {
+			codeName = String.valueOf(originalNum);
+		}
+		return codeName;
 	}
 
 
-	private String getRightSoundWhenIsMultipleOfSpecialNum(Integer originalNum) {
+	private String getCodeNameWhenIsMultipleOfSpecialNum(Integer originalNum) {
 		StringBuilder rightSound = new StringBuilder();
-		rightSound.append(getRightSoundWhenIsMultipleOfFirstSpecialNum(originalNum));
-		rightSound.append(getRightSoundWhenIsMultipleOfSecondSpecialNum(originalNum));
-		rightSound.append(getRightSoundWhenIsMultipleOfThirdSpecialNum(originalNum));
+		rightSound.append(getCodeNameWhenIsMultipleOfFirstSpecialNum(originalNum));
+		rightSound.append(getCodeNameWhenIsMultipleOfSecondSpecialNum(originalNum));
+		rightSound.append(getCodeNameWhenIsMultipleOfThirdSpecialNum(originalNum));
 		return rightSound.toString();
 	}
 
-	private String getRightSoundWhenIsMultipleOfFirstSpecialNum(Integer originalNum) {
+	private String getCodeNameWhenIsMultipleOfFirstSpecialNum(Integer originalNum) {
 		if (isMultiple(originalNum, specialNum.getFirstNum())) {
 			return SpecialNumType.FIRST.getValue();
 		}
 		return "";
 	}
 
-	private String getRightSoundWhenIsMultipleOfSecondSpecialNum(Integer originalNum) {
+	private String getCodeNameWhenIsMultipleOfSecondSpecialNum(Integer originalNum) {
 		if (isMultiple(originalNum, specialNum.getSecondNum())) {
-			return  SpecialNumType.SECOND.getValue();
+			return SpecialNumType.SECOND.getValue();
 		}
 		return "";
 	}
 
-	private String getRightSoundWhenIsMultipleOfThirdSpecialNum(Integer originalNum) {
+	private String getCodeNameWhenIsMultipleOfThirdSpecialNum(Integer originalNum) {
 		if (isMultiple(originalNum, specialNum.getThirdNum())) {
 			return SpecialNumType.THIRD.getValue();
 		}
@@ -68,14 +68,12 @@ public class Student {
 	}
 
 
-
-
-
 	private boolean isMultiple(Integer originalNum, Integer specNum) {
 		return originalNum % specNum == 0;
 	}
 
-	private String getRightSoundWhenContainsFirstSpecialNum(Integer originalNum) {
+
+	private String getCodeNameWhenContainsFirstSpecialNum(Integer originalNum) {
 		if (isContainsFirstSpecNum(originalNum, specialNum.getFirstNum())) {
 			return SpecialNumType.FIRST.getValue();
 		}

@@ -36,29 +36,39 @@
 
 ** 选择第一个任务:学生判断当前报数是否是特殊数的倍数 **
 
-13. 选择需求8.3.1（当前报数是特殊数的倍数）的测试样本
+13. 选择需求8.3.1（当前报数是第一个特殊数的倍数）的测试样本
     * 需求
-        * 输入一个数字，是第二个特殊数的倍数，返回Buzz。
+        * 输入一个数字，是第一个特殊数的倍数，返回Fizz。
     * 意图
         * 最优先的功能，具有公用性和被依赖性，简单实现，。
     * 测试名称
-        * should_return_Buzz_when_input_is_multiple_of_secondSpecialNum
+        * should_return_Fizz_when_input_is_multiple_of_firstSpecialNum
     * 类名及行为名
         * Student，numberOff 
         * SpecialNumber
 
+14.选择需求8.3.1（当前报数是第二个特殊数的倍数）的测试样本
+       * 需求
+           * 输入一个数字，是第二个特殊数的倍数，返回Buzz。
+       * 意图
+           * 进一步添加同类需求。
+       * 测试名称
+           * should_return_Buzz_when_input_is_multiple_of_secondSpecialNum
+       * 类名及行为名
+           * Student，numberOff 
+           * SpecialNumber        
 
-14. 选择需求8.3.2（一个数同时是三个特殊数的倍数）的测试样本
-    * 需求
-        * 输入一个数字，是三个特殊数的倍数，返回FizzBuzzWhizz。
-    * 意图
-        * 进一步添加需求。
-    * 测试名称
-        * should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum
-    * 类名及行为名
-        * Student，numberOff
-        * SpecialNumber
-15. 同样使用伪实现，因为还未突破重构的底线，现有的代码没有阻碍我们添加新需求。
+15.选择需求8.3.1（当前报数是第三个特殊数的倍数）的测试样本
+       * 需求
+           * 输入一个数字，是第三个特殊数的倍数，返回Whizz。
+       * 意图
+           * 进一步添加同类需求。
+       * 测试名称
+           * should_return_Whizz_when_input_is_multiple_of_thirdSpecialNum
+       * 类名及行为名
+           * Student，numberOff 
+           * SpecialNumber        
+
 
 
 16. 选择需求8.3.2（一个数同时是任意2个特殊数的倍数）的测试样本
@@ -72,8 +82,19 @@
         * Student，numberOff
         * SpecialNumber
  
-17. 出现重复代码，处理特殊数倍数判定处理优化，并重构部分坏味道代码，然后从新跑用例，验证优化准确性。 
-         
+ 
+
+17. 选择需求8.3.2（一个数同时是三个特殊数的倍数）的测试样本
+    * 需求
+        * 输入一个数字，是三个特殊数的倍数，返回FizzBuzzWhizz。
+    * 意图
+        * 进一步添加需求。
+    * 测试名称
+        * should_return_FizzBuzzWhizz_when_input_is_multiple_of_all_specialNum
+    * 类名及行为名
+        * Student，numberOff
+        * SpecialNumber
+
       
 18. 选择先从需求8.3.3（包含第一个特殊数）的测试样本。
     * 需求
