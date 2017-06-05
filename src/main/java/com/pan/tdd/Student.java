@@ -17,12 +17,12 @@ public class Student {
 
 
 	public String numberOff(Integer originalNum) {
-		String rightSound = getRightSound(originalNum);
+		String rightSound = getCodeName(originalNum);
 		System.out.println(rightSound);
 		return rightSound;
 	}
 
-	private String getRightSound(Integer originalNum) {
+	private String getCodeName(Integer originalNum) {
 		String codeName;
 
 		codeName = getCodeNameWhenIsMultipleOfSpecialNum(originalNum);
