@@ -2,6 +2,9 @@ package com.pan.tdd;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @Description :学生类
  * @Author :AlbertPan
@@ -23,18 +26,29 @@ public class Student {
 	}
 
 	private String getCodeName(Integer originalNum) {
-		String codeName;
 
-		codeName = getCodeNameWhenIsMultipleOfSpecialNum(originalNum);
+		verifyNumber(originalNum);
+
+		String codeName = getCodeNameWhenIsMultipleOfSpecialNum(originalNum);
 
 		if (isContainsFirstSpecNum(originalNum, specialNum.getFirstNum())) {
 			codeName = SpecialNumType.FIRST.getValue();
 		}
-		
+
 		if (StringUtils.isBlank(codeName)) {
 			codeName = String.valueOf(originalNum);
 		}
 		return codeName;
+	}
+
+	private void verifyNumber(Integer originalNum) {
+		String regex="^[1-9]+[0-9]*$";
+		//^[1-9]+\\d*$
+		Pattern p=Pattern.compile(regex);
+		Matcher m=p.matcher(String.valueOf(originalNum));
+		if(!m.find()){
+			throw  new ValidNumberExcetion();
+		}
 	}
 
 

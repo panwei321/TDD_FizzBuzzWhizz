@@ -121,3 +121,14 @@
         * NumberSounder，getNumber
         * SpecialNums    
         
+20. 选择异常处理的测试样本
+    * 需求
+        * 输入小于1的数字，返回异常ValidNumberExcetion。
+    * 意图
+        * 异常处理。
+    * 测试名称
+        * should_raise_exception_when_input_number_less_then_1
+        
+    * 类名及行为名
+        * NumberSounder，getNumber
+        * SpecialNums         
